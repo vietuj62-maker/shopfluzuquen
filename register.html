@@ -2,28 +2,76 @@
 <html>
 <head>
 <title>Đăng ký</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0f172a;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#1e293b;
+padding:30px;
+border-radius:10px;
+width:300px;
+text-align:center;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px;
+border:none;
+border-radius:5px;
+}
+
+button{
+padding:10px 20px;
+background:#22c55e;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h2>Đăng ký tài khoản</h2>
+<div class="box">
 
-<input id="email" placeholder="Email"><br><br>
-<input id="password" type="password" placeholder="Mật khẩu"><br><br>
+<h2>Đăng ký</h2>
+
+<input id="email" placeholder="Email"><br>
+<input id="password" type="password" placeholder="Password"><br>
 
 <button onclick="register()">Đăng ký</button>
 
-<p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+<p id="msg"></p>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-<script src="supabase.js"></script>
+</div>
 
 <script>
 
+const supabase = window.supabase.createClient(
+"https://gsohxotyrcspzcbgtphd.supabase.co",
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdzb2h4b3R5cmNzcHpjYmd0cGhkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMzM5OTcsImV4cCI6MjA4ODkwOTk5N30.ssU1d1y28ZzKLCLAw1OkX6_PCot12qEjQtMMpaifkC8"
+)
+
 async function register(){
 
-let email = document.getElementById("email").value
-let password = document.getElementById("password").value
+let email=document.getElementById("email").value
+let password=document.getElementById("password").value
 
 const { data, error } = await supabase.auth.signUp({
 email: email,
@@ -31,9 +79,9 @@ password: password
 })
 
 if(error){
-alert(error.message)
+document.getElementById("msg").innerText=error.message
 }else{
-alert("Đăng ký thành công! Kiểm tra Gmail để xác minh")
+document.getElementById("msg").innerText="Đăng ký thành công! Kiểm tra Gmail để xác minh."
 }
 
 }
