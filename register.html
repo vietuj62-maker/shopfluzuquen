@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Register</title>
+<title>Đăng ký</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
 </head>
 
 <body>
@@ -18,19 +19,14 @@
 
 <script>
 
-const supabase = window.supabase.createClient(
-"https://gsohxotyrcspzcbgtphd.supabase.co",
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdzb2h4b3R5cmNzcHpjYmd0cGhkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMzM5OTcsImV4cCI6MjA4ODkwOTk5N30.ssU1d1y28ZzKLCLAw1OkX6_PCot12qEjQtMMpaifkC8"
-)
-
 async function register(){
 
 let email=document.getElementById("email").value
 let password=document.getElementById("password").value
 
 const { error } = await supabase.auth.signUp({
-email: email,
-password: password
+email:email,
+password:password
 })
 
 if(error){
@@ -45,7 +41,6 @@ document.getElementById("msg").innerText="Đăng ký thành công! Kiểm tra Gm
 
 </body>
 </html>
-</script>
 
 </body>
 </html>
