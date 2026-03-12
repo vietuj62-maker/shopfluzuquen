@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Đăng ký</title>
+</head>
+
+<body>
+
+<h2>Đăng ký tài khoản</h2>
+
+<input id="email" placeholder="Email"><br><br>
+<input id="password" type="password" placeholder="Mật khẩu"><br><br>
+
+<button onclick="register()">Đăng ký</button>
+
+<p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="supabase.js"></script>
 
@@ -5,10 +22,10 @@
 
 async function register(){
 
-const email = document.getElementById("email").value
-const password = document.getElementById("password").value
+let email = document.getElementById("email").value
+let password = document.getElementById("password").value
 
-const { error } = await supabase.auth.signUp({
+const { data, error } = await supabase.auth.signUp({
 email: email,
 password: password
 })
@@ -16,9 +33,12 @@ password: password
 if(error){
 alert(error.message)
 }else{
-alert("Kiểm tra Gmail để xác minh tài khoản")
+alert("Đăng ký thành công! Kiểm tra Gmail để xác minh")
 }
 
 }
 
 </script>
+
+</body>
+</html>
