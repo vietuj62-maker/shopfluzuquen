@@ -6,116 +6,144 @@
 <style>
 
 body{
+background:#0b1b33;
 font-family:Arial;
-background:#111827;
 color:white;
 text-align:center;
 }
 
-.top{
-position:absolute;
-top:20px;
-right:20px;
-}
-
-.card{
-background:#1f2937;
-padding:20px;
-margin:20px auto;
-width:250px;
-border-radius:10px;
-}
-
-button{
-padding:10px 20px;
-border:none;
-background:#22c55e;
-color:white;
-border-radius:6px;
-cursor:pointer;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="top">
-
-<span id="user"></span>
-
-<button onclick="logout()">Đăng xuất</button>
-
-</div>
-
-<h1>SHOP ROBLOX</h1>
-
-<div class="shop">
 .shop{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
 padding:40px;
+max-width:900px;
+margin:auto;
 }
+
+.card{
+background:#1c2b44;
+padding:15px;
+border-radius:12px;
+}
+
+.card img{
+width:100%;
+height:120px;
+object-fit:contain;
+margin-bottom:10px;
+}
+
+button{
+background:#22c55e;
+border:none;
+padding:8px 20px;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#16a34a;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Shop Item</h1>
+
+<div class="shop">
+
+<div class="card">
+<img src="images/item1.png">
 <h3>Race Reroll</h3>
-
 <p>10.000đ</p>
-
 <button>Mua</button>
-
 </div>
 
 <div class="card">
-  
-<img src="https://trello.com/1/cards/699d6ba4e98f75976b407610/attachments/699d73b098046024f9046b1b/download/image.png">
-  
+<img src="images/item2.png">
 <h3>Clan Reroll</h3>
-
 <p>10.000đ</p>
-
 <button>Mua</button>
-
 </div>
 
 <div class="card">
-
-<h3>Aura Crate</h3>
-
+<img src="images/item3.png">
+<h3>Aura Spin</h3>
 <p>5.000đ</p>
-  
+<button>Mua</button>
 </div>
-  
+
 <div class="card">
-    
+<img src="images/item4.png">
 <h3>Trait Reroll</h3>
-
 <p>5.000đ</p>
-  
 <button>Mua</button>
+</div>
+
+<div class="card">
+<img src="images/item5.png">
+<h3>Item 5</h3>
+<p>10.000đ</p>
+<button>Mua</button>
+</div>
+
+<div class="card">
+<img src="images/item6.png">
+<h3>Item 6</h3>
+<p>10.000đ</p>
+<button>Mua</button>
+</div>
+
+<div class="card">
+<img src="images/item7.png">
+<h3>Item 7</h3>
+<p>10.000đ</p>
+<button>Mua</button>
+</div>
+
+<div class="card">
+<img src="images/item8.png">
+<h3>Item 8</h3>
+<p>10.000đ</p>
+<button>Mua</button>
+</div>
+
+<div class="card">
+<img src="images/item9.png">
+<h3>Item 9</h3>
+<p>10.000đ</p>
+<button>Mua</button>
+</div>
+
+<div class="card">
+<img src="images/item10.png">
+<h3>Item 10</h3>
+<p>10.000đ</p>
+<button>Mua</button>
+</div>
+
+<div class="card">
+<img src="images/item11.png">
+<h3>Item 11</h3>
+<p>10.000đ</p>
+<button>Mua</button>
+</div>
+
+<div class="card">
+<img src="images/item12.png">
+<h3>Item 12</h3>
+<p>10.000đ</p>
+<button>Mua</button>
+</div>
 
 </div>
 
-<script>
-
-let user = localStorage.getItem("user")
-
-if(!user){
-
-window.location="login.html"
-
-}
-
-document.getElementById("user").innerText="Xin chào: "+user
-
-function logout(){
-
-localStorage.removeItem("user")
-
-window.location="index.html"
-
-}
-
+</body>
+</html>
 </script>
 
 </body>
