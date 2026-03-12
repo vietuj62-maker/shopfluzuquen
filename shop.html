@@ -153,3 +153,38 @@ background:#16a34a;
 
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+
+const supabase = supabase.createClient(
+"https://YOURPROJECT.supabase.co",
+"YOUR_ANON_KEY"
+)
+
+async function loadUser(){
+
+const { data:{user} } = await supabase.auth.getUser()
+
+if(!user){
+
+window.location="login.html"
+return
+
+}
+
+document.getElementById("username").innerText = user.email
+
+let { data } = await supabase
+.from("users")
+.select("*")
+.eq("id", user.id)
+.single()
+
+document.getElementById("money").innerText = data.money
+
+}
+
+loadUser()
+
+</script>
