@@ -1,285 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<Sailor>Shop Roblox</Piece>
+<title>Shop Roblox</title>
 
 <style>
 
 body{
-margin:0;
 font-family:Arial;
-background:#f5f5f5;
+background:#111827;
+color:white;
+text-align:center;
+padding-top:150px;
 }
 
-header{
-background:white;
-padding:10px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-
-.logo{
-font-weight:bold;
-font-size:20px;
-color:#ff3c3c;
-}
-
-.menu a{
-margin:0 10px;
-text-decoration:none;
-color:#333;
+button{
+padding:12px 20px;
+margin:10px;
+font-size:16px;
+border:none;
+border-radius:6px;
+cursor:pointer;
 }
 
 .login{
-background:#ff3c3c;<div class="menu">
-<a href="#">Trang chủ</a>
-<a href="#">Danh mục game</a>
-<a href="#">Tin tức</a>
-<a href="login.html">Đăng nhập</a>
-<a href="register.html">Đăng ký</a>
-</div>
+background:#3b82f6;
 color:white;
-padding:6px 12px;
-border-radius:5px;
 }
 
-.banner{
-width:100%;
-height:300px;
-background:url("https://wallpaperaccess.com/full/2895664.jpg") center/cover;
-}
-
-.section{
-padding:20px;
-}
-
-.section h2{
-background:#8b0000;
-color:white;
-padding:8px;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-gap:20px;
-margin-top:20px;
-}
-
-.card{
-background:white;
-border-radius:10px;
-overflow:hidden;
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
-}
-
-.card img{
-width:100%;
-height:150px;
-object-fit:cover;
-}
-
-.card-body{
-padding:10px;
-}
-
-.price{
-color:red;
-font-weight:bold;
-}
-
-button{
-background:#ff3c3c;
-border:none;
-color:white;
-padding:6px 10px;
-border-radius:4px;
-cursor:pointer;
-}
-
-button:hover{
-background:#e52e2e;
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">SHOP ROBLOX</div>
-
-<div class="menu">
-<a href="#">Trang chủ</a>
-<a href="#">Danh mục game</a>
-<a href="#">Tin tức</a>
-<a href="login.html" class="login">Đăng nhập</a>
-</div>
-
-</header>
-
-<div class="banner"></div>
-
-<div class="section">
-
-<h2>🔥 Đồ Sailor Piece</h2>
-
-<div class="products">
-
-<div class="card">
-<img src="https://trello.com/1/cards/695886bc589b2117031f7be4/attachments/69615003c2cdd3ec11d40802/download/4865.jpg">
-<div class="card-body">
-<h4> Trait reroll-7.000</h4>
-<p class="price">10.000VND</p>
-<button>Mua ngay</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://trello.com/1/cards/693dcee6f365af26ad6a4b26/attachments/69614faf8196d9dcf44a18e9/download/4849.jpg">
-<div class="card-body">
-<h4> Race Reroll 7.000</h4>
-<p class="price">10.000VND</p>
-<button>Mua ngay</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://trello.com/1/cards/699d6ba4e98f75976b407610/attachments/699d73b098046024f9046b1b/download/image.png">
-<div class="card-body">
-<h4>Clan Reroll 500</h4>
-<p class="price">10.000VND</p>
-<button>Mua ngay</button>
-</div>
-</div>
-
-<div class="card">
-<img src="https://trello.com/1/cards/6984b0ba3ca6ca92b72dce3c/attachments/6984b0c70668113522a0ed2f/download/Aura.PNG">
-<div class="card-body">
-<h4> Aura Crate 1</h4>
-<p class="price">3.000VND</p>
-<button>Mua ngay</button>
-</div>
-</div>
-<script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase.js"></script>
-let user = localStorage.getItem("user")
-<!DOCTYPE html>
-<html>
-<head>
-<title>Shop Roblox</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<style>
-
-body{
-font-family:Arial;
-background:#0f172a;
-color:white;
-text-align:center;
-padding-top:100px;
-}
-
-.box{
-background:#1e293b;
-padding:30px;
-width:300px;
-margin:auto;
-border-radius:10px;
-}
-
-input{
-width:90%;
-padding:10px;
-margin:10px;
-border:none;
-border-radius:5px;
-}
-
-button{
-padding:10px 20px;
+.register{
 background:#22c55e;
-border:none;
 color:white;
-border-radius:5px;
-cursor:pointer;
-}
-
-button:hover{
-background:#16a34a;
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="box">
+<h1>SHOP ROBLOX</h1>
 
-<h2>SHOP ROBLOX</h2>
+<p>Mua item Roblox giá rẻ</p>
 
-<input id="email" placeholder="Email"><br>
-<input id="password" type="password" placeholder="Password"><br>
+<button class="login" onclick="goLogin()">Đăng nhập</button>
 
-<button onclick="register()">Đăng ký</button>
-<button onclick="login()">Đăng nhập</button>
-
-<p id="msg"></p>
-
-</div>
+<button class="register" onclick="goRegister()">Đăng ký</button>
 
 <script>
 
-const supabase = window.supabase.createClient(
-"https://gsohxotyrcspzcbgtphd.supabase.co",
-"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdzb2h4b3R5cmNzcHpjYmd0cGhkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMzMzM5OTcsImV4cCI6MjA4ODkwOTk5N30.ssU1d1y28ZzKLCLAw1OkX6_PCot12qEjQtMMpaifkC8"
-)
+let user = localStorage.getItem("user")
 
-async function register(){
+if(user){
 
-let email=document.getElementById("email").value
-let password=document.getElementById("password").value
-
-const { data, error } = await supabase.auth.signUp({
-email:email,
-password:password
-})
-
-if(error){
-document.getElementById("msg").innerText=error.message
-}else{
-document.getElementById("msg").innerText="Đăng ký thành công! Kiểm tra Gmail để xác minh."
-}
+window.location="shop.html"
 
 }
 
-async function login(){
+function goLogin(){
 
-let email=document.getElementById("email").value
-let password=document.getElementById("password").value
+window.location="login.html"
 
-const { data, error } = await supabase.auth.signInWithPassword({
-email:email,
-password:password
-})
-
-if(error){
-document.getElementById("msg").innerText=error.message
-}else{
-document.getElementById("msg").innerText="Đăng nhập thành công!"
 }
+
+function goRegister(){
+
+window.location="register.html"
 
 }
 
 </script>
 
-</body>
-</html>
-</script>
 </body>
 </html>
