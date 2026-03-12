@@ -1,96 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shop Roblox</title>
-
-<style>
-
-body{
-font-family:Arial;
-background:#0f172a;
-color:white;
-text-align:center;
-padding-top:50px;
-}
-
-.top{
-position:absolute;
-top:20px;
-right:20px;
-}
-
-button{
-padding:8px 15px;
-background:red;
-border:none;
-color:white;
-border-radius:5px;
-cursor:pointer;
-}
-
-.card{
-background:#1e293b;
-padding:20px;
-margin:20px auto;
-width:300px;
-border-radius:10px;
-}
-
-</style>
-
+<title>Đăng nhập</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
 </head>
 
 <body>
 
-<div class="top">
+<h2>Đăng nhập</h2>
 
-<span id="user"></span>
-<button onclick="logout()">Đăng xuất</button>
+<input id="email" placeholder="Email"><br><br>
+<input id="password" type="password" placeholder="Password"><br><br>
 
-</div>
+<button onclick="login()">Đăng nhập</button>
 
-<h1>SHOP ROBLOX</h1>
-
-<div class="card">
-<h3>Race Reroll</h3>
-<p>10.000đ</p>
-<button>Mua ngay</button>
-</div>
-
-<div class="card">
-<h3>Clan Reroll</h3>
-<p>10.000đ</p>
-<button>Mua ngay</button>
-</div>
-
-<div class="card">
-<h3>Aura Crate</h3>
-<p>3.000đ</p>
-<button>Mua ngay</button>
-</div>
+<p id="msg"></p>
 
 <script>
 
-let user = localStorage.getItem("user")
+async function login(){
 
-if(!user){
-window.location="login.html"
+let email=document.getElementById("email").value
+let password=document.getElementById("password").value
+
+const { error } = await supabase.auth.signInWithPassword({
+email:email,
+password:password
+})
+
+if(error){
+document.getElementById("msg").innerText=error.message
 }else{
-document.getElementById("user").innerText="Xin chào: "+user
+
+localStorage.setItem("user",email)
+
+window.location="shop.html"
+
 }
-
-function logout(){
-
-localStorage.removeItem("user")
-
-window.location="login.html"
 
 }
 
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
