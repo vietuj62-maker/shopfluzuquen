@@ -165,10 +165,14 @@ background:#e52e2e;
 <button>Mua ngay</button>
 </div>
 </div>
+<script>
 
-</div>
+let user = localStorage.getItem("user")
 
-</div>
+if(user){
+document.write("Xin chào: " + user)
+}
 
+</script>
 </body>
 </html>
