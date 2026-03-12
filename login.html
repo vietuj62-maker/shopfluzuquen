@@ -2,8 +2,6 @@
 <html>
 <head>
 <title>Đăng nhập</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase.js"></script>
 </head>
 
 <body>
@@ -19,23 +17,22 @@
 
 <script>
 
-async function login(){
+function login(){
 
 let email=document.getElementById("email").value
 let password=document.getElementById("password").value
 
-const { error } = await supabase.auth.signInWithPassword({
-email:email,
-password:password
-})
+let saved = localStorage.getItem(email)
 
-if(error){
-document.getElementById("msg").innerText=error.message
-}else{
+if(saved === password){
 
 localStorage.setItem("user",email)
 
 window.location="shop.html"
+
+}else{
+
+document.getElementById("msg").innerText="Sai tài khoản"
 
 }
 
