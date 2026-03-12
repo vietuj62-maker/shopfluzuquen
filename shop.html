@@ -1,1 +1,92 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shop Roblox</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#111827;
+color:white;
+text-align:center;
+}
+
+.top{
+position:absolute;
+top:20px;
+right:20px;
+}
+
+.card{
+background:#1f2937;
+padding:20px;
+margin:20px auto;
+width:300px;
+border-radius:10px;
+}
+
+button{
+padding:8px 15px;
+border:none;
+background:#22c55e;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="top">
+
+<span id="user"></span>
+<button onclick="logout()">Đăng xuất</button>
+
+</div>
+
+<h1>SHOP ROBLOX</h1>
+
+<div class="card">
+<h3>Race Reroll</h3>
+<p>10.000đ</p>
+<button>Mua ngay</button>
+</div>
+
+<div class="card">
+<h3>Clan Reroll</h3>
+<p>10.000đ</p>
+<button>Mua ngay</button>
+</div>
+
+<div class="card">
+<h3>Aura Crate</h3>
+<p>3.000đ</p>
+<button>Mua ngay</button>
+</div>
+
+<script>
+
+let user = localStorage.getItem("user")
+
+if(!user){
+window.location="login.html"
+}else{
+document.getElementById("user").innerText="Xin chào: "+user
+}
+
+function logout(){
+
+localStorage.removeItem("user")
+window.location="login.html"
+
+}
+
+</script>
+
+</body>
+</html>
