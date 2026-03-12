@@ -2,8 +2,6 @@
 <html>
 <head>
 <title>Đăng ký</title>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="supabase.js"></script>
 </head>
 
 <body>
@@ -19,28 +17,18 @@
 
 <script>
 
-async function register(){
+function register(){
 
 let email=document.getElementById("email").value
 let password=document.getElementById("password").value
 
-const { error } = await supabase.auth.signUp({
-email:email,
-password:password
-})
+localStorage.setItem(email,password)
 
-if(error){
-document.getElementById("msg").innerText=error.message
-}else{
-document.getElementById("msg").innerText="Đăng ký thành công! Kiểm tra Gmail."
-}
+document.getElementById("msg").innerText="Đăng ký thành công"
 
 }
 
 </script>
-
-</body>
-</html>
 
 </body>
 </html>
