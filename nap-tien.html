@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Nạp tiền</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#0b1f3a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+.box{
+background:#1c2b44;
+padding:30px;
+border-radius:10px;
+width:350px;
+margin:auto;
+}
+
+input{
+width:100%;
+padding:10px;
+margin-top:10px;
+border:none;
+border-radius:6px;
+}
+
+button{
+margin-top:15px;
+padding:10px;
+background:#22c55e;
+border:none;
+border-radius:6px;
+color:white;
+cursor:pointer;
+}
+
+img{
+margin-top:20px;
+width:200px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Nạp tiền</h2>
+
+<input id="money" placeholder="Nhập số tiền">
+
+<button onclick="createQR()">Tạo QR chuyển khoản</button>
+
+<div id="qr"></div>
+
+</div>
+
+<script>
+
+function createQR(){
+
+let money = document.getElementById("money").value
+
+let content = "nap_" + Math.floor(Math.random()*100000)
+
+let qr = `
+https://img.vietqr.io/image/MB-123456789-compact2.png?amount=${money}&addInfo=${content}
+`
+
+document.getElementById("qr").innerHTML =
+"<img src='"+qr+"'> <p>Nội dung: "+content+"</p>"
+
+}
+
+</script>
+
+</body>
+</html>
