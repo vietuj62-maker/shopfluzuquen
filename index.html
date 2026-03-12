@@ -178,3 +178,16 @@ function saveStock(){
 }
 </script></body>
   </html>
+<img id="qr">
+<p>Nội dung chuyển khoản: <b id="noidung"></b></p>
+
+<script>
+let random = Math.floor(1000 + Math.random() * 9000);
+let noidung = "sailor" + random;
+
+document.getElementById("noidung").innerText = noidung;
+
+let qr = "https://qr.sepay.vn/img?acc=1729052009&bank=MB&amount=10000&des=" + noidung;
+
+document.getElementById("qr").src = qr;
+</script>
